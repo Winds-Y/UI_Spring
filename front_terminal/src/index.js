@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import App from './App'
 import UserList from './components/UserList';
 import {BrowserRouter, Route} from 'react-router-dom'
 import Home from './components/Home'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
 import 'bootstrap/dist/css/bootstrap.css'
 import Page1 from './components/Page1'
 import Page2 from './components/Page2'
