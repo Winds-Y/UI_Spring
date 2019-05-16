@@ -29,7 +29,7 @@ export default class UserList extends Component{
         // });
 
         //方法3：
-        let users =await (await fetch('http://localhost:5000/api/users')).json();
+        let users =await (await fetch('http://localhost:8080/api/users')).json();
         console.log(users);
         this.setState({users});
     }
