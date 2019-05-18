@@ -7,8 +7,8 @@ class Home extends React.Component{
             <div>
                 <div>This is Home</div>
                 <div>
-                    <Link to="/Page1">Page1</Link>
-                    <Link to="/Page2">Page2</Link>
+                    <Link to={{pathname:'/Page1',query:{way:'query'}}}>Page1</Link>
+                    <Link to={{pathname:'/Page2',state:{way: 'state'}}}>Page2</Link>
                     <Link to="/Page3">Page3</Link>
                     <Link to="/UserList">UserList</Link>
                 </div>

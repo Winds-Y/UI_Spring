@@ -47,11 +47,13 @@ class Page1 extends React.Component{
         })
     }
     render(){
+        let way=this.props.location.query.way;
         return (
             <div>
                 <h1 className="mainDiv">This is Page1</h1>
                 {/*<input name="testStr" type="text" value={this.state.testStr} onChange={this.handleChange}/>*/}
                 {/*<h4>{this.state.testStr}</h4>*/}
+                <label>From Home:{way}</label><br/>
                 <label>用户名：</label>
                 <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/>
                 <label>密码：</label>
