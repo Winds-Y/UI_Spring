@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './App'
 import UserList from './components/UserList';
 import {BrowserRouter, Route} from 'react-router-dom'
 import Home from './components/Home'
@@ -10,6 +9,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Page1 from './components/Page1'
 import Page2 from './components/Page2'
 import Page3 from './components/Page3'
+import TestSocketIo from './components/TestSocketIo'
+import Dynamic from './components/Dynamic'
 
 // ReactDOM.render(
 //     (<BrowserRouter>
@@ -28,6 +29,8 @@ ReactDOM.render(
                 <Route path={'/Page2'} component={Page2}/>
                 <Route path={'/Page3'} component={Page3}/>
                 <Route path={'/UserList'} component={UserList}/>
+                <Route path={'/TestSocketIo'} component={TestSocketIo}/>
+                <Route path={'/Dynamic'} component={Dynamic}/>
             </div>
         </BrowserRouter>
     ),

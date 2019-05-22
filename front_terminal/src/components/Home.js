@@ -11,6 +11,8 @@ class Home extends React.Component{
                     <Link to={{pathname:'/Page2',state:{way: 'state'}}}>Page2</Link>
                     <Link to="/Page3">Page3</Link>
                     <Link to="/UserList">UserList</Link>
+                    <Link to={{pathname:'/TestSocketIo'}}>TestSocketIo</Link>
+                    <Link to={{pathname:'/Dynamic'}}>Dynamic</Link>
                 </div>
             </div>
         );

@@ -3,10 +3,12 @@ package com.example.back_terminal.controller;
 import com.alibaba.fastjson.JSON;
 import com.example.back_terminal.entity.User;
 import com.example.back_terminal.repository.UserRepository;
+import com.example.back_terminal.utils.WebSocketClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,6 +27,17 @@ public class BodyController {
         System.out.println("Get UserList-------------------------------------");
         return userRepository.findAll();
     }
+    @GetMapping("/testWebsocket")
+    public String sendMessage(){
+        try {
+            WebSocketClient.session.getBasicRemote().sendText("接收成功");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Map<String,Integer>map=new HashMap<>();
+        map.put("code",200);
+        return JSON.toJSONString(map);
+    }
     @PostMapping("/login")
     public String login(@Param("username") String username,@Param("password") String password){
         System.out.println("in login: username "+username+"  password: "+password);
@@ -32,14 +45,14 @@ public class BodyController {
         map.put("code",200);
         return JSON.toJSONString(map);
     }
-    @PostMapping
-    public User addUser(@RequestBody User user){
-        System.out.println("addUser*****************************************8");
-        return userRepository.save(user);
-    }
-    @DeleteMapping(value = "/{id}")
-    public void deleteUser(@PathVariable("id") Integer id){
-        System.out.println("deleteUser*****************************************8");
-        userRepository.deleteById(Long.valueOf(id));
-    }
+//    @PostMapping
+//    public User addUser(@RequestBody User user){
+//        System.out.println("addUser*****************************************8");
+//        return userRepository.save(user);
+//    }
+//    @DeleteMapping(value = "/{id}")
+//    public void deleteUser(@PathVariable("id") Integer id){
+//        System.out.println("deleteUser*****************************************8");
+//        userRepository.deleteById(Long.valueOf(id));
+//    }
 }

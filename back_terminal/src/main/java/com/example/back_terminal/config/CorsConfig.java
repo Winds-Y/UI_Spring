@@ -26,4 +26,13 @@ public class CorsConfig extends WebMvcConfigurationSupport {
                 .maxAge(3600);
         super.addCorsMappings(registry);
     }
+
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/resources/")
+                .addResourceLocations("classpath:/static/")
+                .addResourceLocations("classpath:/public/");
+        super.addResourceHandlers(registry);
+    }
 }
