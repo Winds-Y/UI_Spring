@@ -35,7 +35,6 @@ export default class UserList extends Component{
     }
     render() {
         let {users=[]}=this.state;
-
         return (
             <div>
                 <table className='table'>
