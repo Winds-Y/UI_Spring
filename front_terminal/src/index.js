@@ -4,6 +4,9 @@ import './index.css'
 import {HashRouter,BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 import 'bootstrap/dist/css/bootstrap.css'
+import {Provider} from 'react-redux';
+import store from '@reduxHome/store/Store'
+
 import Home from './components/Home'
 import Page1 from './components/Page1'
 import Page2 from './components/Page2'
@@ -11,6 +14,7 @@ import Page3 from './components/Page3'
 import TestSocketIo from './components/TestSocketIo'
 import UserList from './components/UserList';
 import Dynamic from './components/Dynamic'
+import ControlPanel from '@componentsHome/redux_test/ControlPanel'
 
 // ReactDOM.render(
 //     (<BrowserRouter>
@@ -23,18 +27,22 @@ import Dynamic from './components/Dynamic'
 ReactDOM.render(
     (
         <div>
-            <BrowserRouter>
-                <Home path={'/'} component={Home} children={Page1}>
-                    <Switch>
-                        <Route exact  path={'/Page1'} component={Page1}/>
-                        <Route  path={'/Page2'} component={Page2}/>
-                        <Route  path={'/Page3'} component={Page3}/>
-                        <Route  path={'/UserList'} component={UserList}/>
-                        <Route  path={'/TestSocketIo'} component={TestSocketIo}/>
-                        <Route  path={'/Dynamic'} component={Dynamic}/>
-                    </Switch>
-                </Home>
-            </BrowserRouter>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <Home>
+                        <Switch>
+                            <Route exact path={'/'} component={Page1}/>
+                            <Route path={'/Page1'} component={Page1}/>
+                            <Route path={'/Page2'} component={Page2}/>
+                            <Route path={'/Page3'} component={Page3}/>
+                            <Route path={'/UserList'} component={UserList}/>
+                            <Route path={'/TestSocketIo'} component={TestSocketIo}/>
+                            <Route path={'/Dynamic'} component={Dynamic}/>
+                            <Route path={'/ControlPanel'} component={ControlPanel}/>
+                        </Switch>
+                    </Home>
+                </BrowserRouter>
+            </Provider>
         </div>
 
     ),

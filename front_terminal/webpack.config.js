@@ -4,7 +4,9 @@ module.exports={
         alias:{
             '@imgHome': path.resolve('src/assets/images'),
             '@':path.resolve(__dirname,'./src'),
-            '@cssHome':path.resolve(__dirname,'./src/assets/css')
+            '@cssHome':path.resolve(__dirname,'./src/assets/css'),
+            '@componentsHome':path.resolve(__dirname,'./src/components'),
+            '@reduxHome':path.resolve(__dirname,'./src/redux')
         }
     },
 };

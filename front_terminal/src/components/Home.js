@@ -58,6 +58,7 @@ class Home extends React.Component{
                         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>导航二</span></span>}>
                             <Menu.Item key="5"><Link to={{pathname:'/TestSocketIo'}}>TestSocketIo</Link></Menu.Item>
                             <Menu.Item key="6"><Link to={{pathname:'/Dynamic'}}>Dynamic</Link></Menu.Item>
+                            <Menu.Item key={'7'}><Link to={{pathname:'/ControlPanel'}}/>Redux入门实例</Menu.Item>
                         </SubMenu>
                     </Menu>
                 </div>
