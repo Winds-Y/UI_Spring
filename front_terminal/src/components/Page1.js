@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/main.css'
+import '../assets/css/main.css'
 import Button from "react-bootstrap/Button";
 
 class Page1 extends React.Component{
@@ -29,6 +29,7 @@ class Page1 extends React.Component{
         formData.append('mask',"login");
         formData.append('username',this.state.username);
         formData.append('password',this.state.password);
+        // this.props.history.push('UserList');
         fetch('http://localhost:8080/login',{
             method:'post',
             body:formData

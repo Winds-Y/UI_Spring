@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import UserList from './components/UserList';
-import {BrowserRouter, Route} from 'react-router-dom'
-import Home from './components/Home'
+import {HashRouter,BrowserRouter, Switch,Route,Redirect} from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 import 'bootstrap/dist/css/bootstrap.css'
+import Home from './components/Home'
 import Page1 from './components/Page1'
 import Page2 from './components/Page2'
 import Page3 from './components/Page3'
 import TestSocketIo from './components/TestSocketIo'
+import UserList from './components/UserList';
 import Dynamic from './components/Dynamic'
 
 // ReactDOM.render(
@@ -22,17 +22,21 @@ import Dynamic from './components/Dynamic'
 // ReactDOM.render(<Home/>,document.getElementById('root'));
 ReactDOM.render(
     (
-        <BrowserRouter>
-            <div>
-                <Route path={'/'} component={Home}/>
-                <Route path={'/Page1'} component={Page1}/>
-                <Route path={'/Page2'} component={Page2}/>
-                <Route path={'/Page3'} component={Page3}/>
-                <Route path={'/UserList'} component={UserList}/>
-                <Route path={'/TestSocketIo'} component={TestSocketIo}/>
-                <Route path={'/Dynamic'} component={Dynamic}/>
-            </div>
-        </BrowserRouter>
+        <div>
+            <BrowserRouter>
+                <Home path={'/'} component={Home} children={Page1}>
+                    <Switch>
+                        <Route exact  path={'/Page1'} component={Page1}/>
+                        <Route  path={'/Page2'} component={Page2}/>
+                        <Route  path={'/Page3'} component={Page3}/>
+                        <Route  path={'/UserList'} component={UserList}/>
+                        <Route  path={'/TestSocketIo'} component={TestSocketIo}/>
+                        <Route  path={'/Dynamic'} component={Dynamic}/>
+                    </Switch>
+                </Home>
+            </BrowserRouter>
+        </div>
+
     ),
     document.getElementById('root')
 );
