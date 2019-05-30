@@ -13,8 +13,9 @@ import Page2 from './components/Page2'
 import Page3 from './components/Page3'
 import TestSocketIo from './components/TestSocketIo'
 import UserList from './components/UserList';
-import Dynamic from './components/Dynamic'
+import CpuMonitor from '@componentsHome/CpuMonitor'
 import ControlPanel from '@componentsHome/redux_test/ControlPanel'
+import TestPage from '@componentsHome/TestPage'
 
 // ReactDOM.render(
 //     (<BrowserRouter>
@@ -37,8 +38,9 @@ ReactDOM.render(
                             <Route path={'/Page3'} component={Page3}/>
                             <Route path={'/UserList'} component={UserList}/>
                             <Route path={'/TestSocketIo'} component={TestSocketIo}/>
-                            <Route path={'/Dynamic'} component={Dynamic}/>
+                            <Route path={'/CpuMonitor'} component={CpuMonitor}/>
                             <Route path={'/ControlPanel'} component={ControlPanel}/>
+                            <Route path={'/TestPage'} component={TestPage}/>
                         </Switch>
                     </Home>
                 </BrowserRouter>

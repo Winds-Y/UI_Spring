@@ -57,8 +57,9 @@ class Home extends React.Component{
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>导航二</span></span>}>
                             <Menu.Item key="5"><Link to={{pathname:'/TestSocketIo'}}>TestSocketIo</Link></Menu.Item>
-                            <Menu.Item key="6"><Link to={{pathname:'/Dynamic'}}>Dynamic</Link></Menu.Item>
+                            <Menu.Item key="6"><Link to={{pathname:'/CpuMonitor'}}>Cpu实时监测</Link></Menu.Item>
                             <Menu.Item key={'7'}><Link to={{pathname:'/ControlPanel'}}/>Redux入门实例</Menu.Item>
+                            <Menu.Item key={'8'}><Link to={{pathname:'/TestPage'}}/>Test</Menu.Item>
                         </SubMenu>
                     </Menu>
                 </div>

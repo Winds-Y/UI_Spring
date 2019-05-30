@@ -25,7 +25,8 @@ module.exports=override(
         '@imgHome':path.resolve(__dirname,'./src/assets/images'),
         '@cssHome':path.resolve(__dirname,'./src/assets/css'),
         '@componentsHome':path.resolve(__dirname,'./src/components'),
-        '@reduxHome':path.resolve(__dirname,'./src/redux')
+        '@reduxHome':path.resolve(__dirname,'./src/redux'),
+        '@utilsHome':path.resolve(__dirname,'./src/utils')
     }),
     ////按需加载antd
     fixBabelImports('import', {

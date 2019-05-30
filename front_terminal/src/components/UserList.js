@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import 'whatwg-fetch'
 import {Button} from 'react-bootstrap'
-import axios from 'axios'
+// import axios from 'axios'
 
 export default class UserList extends Component{
     constructor(props){
