@@ -71,6 +71,10 @@ class CpuMonitor extends React.Component{
 
         //CPU
         this.state.mySocket.on('server2client',(res)=>{
+
+            // 从后端获得可以直接用于展示的数组后，
+            // 不用其他处理，直接进行setState
+
             // cpu1=res.data1;
             // cpu2=res.data2;
             // cpu3=res.data3;
@@ -107,6 +111,10 @@ class CpuMonitor extends React.Component{
             temp_cpu.shift();
             cpu4=[...temp_cpu];
 
+
+            // 以下直接在原来的数组上修改，
+            // 然后setState 无法更新echart
+
             // cpu1.push(res.data1[1]);
             // cpu2.push(res.data1[2]);
             // cpu3.push(res.data1[3]);
@@ -118,35 +126,13 @@ class CpuMonitor extends React.Component{
             //     cpu4.shift();
             // }
 
-            // console.log(res.data);
-            // // console.log(res);
-            // // time.push(res.data[0]);
-            // cpu1.push(res.data[1]);
-            // cpu2.push(res.data[2]);
-            // cpu3.push(res.data[3]);
-            // cpu4.push(res.data[4]);
-            // if(cpu1.length>10){
-            //     // time.shift();
-            //     cpu1.shift();
-            //     cpu2.shift();
-            //     cpu3.shift();
-            //     cpu4.shift();
-            // }
-
-            // console.log(`time length =${time.length}`);
-            // console.log(time);
-            // console.log(cpu1);
-            // console.log(cpu2);
-            // console.log(cpu3);
-            // console.log(cpu4);
             this.setState({
                 option:this.getOption()
             });
-            // console.log(`state option is:`);
-            // console.log(this.state.option);
+
         });
 
-        //销售
+        //销售 从后端获取直接可用数据
         // this.state.mySocket.on('server2client',(res)=>{
         //     res=JSON.parse(res);
         //     let num=res.data;
